@@ -559,20 +559,31 @@ span{
 } */
 /* Testimonial Section */
 /* Testimonial Section */
+/* Testimonial Section */
 .testimonial-section {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: space-around;
     padding: 50px 0;
+}
+
+.testimonial-title {
+    font-size: 5rem; /* Increase the font size */
+    margin-bottom: 50px;
+    color: white; /* White color */
+    text-align: center; /* Center the title */
+    width: 100%; /* Ensure the title takes up the full width */
 }
 
 .testimonial-card {
     background-color: black;
     color: white;
-    padding: 30px 20px; /* Increased padding for more content space */
+    padding: 30px 20px;
     border-radius: 8px;
     text-align: center;
-    width: 25%; /* Decreased width */
-    height: 350px; /* Increased height */
+    width: 25%;
+    height: 350px;
+    margin: 0 10px;
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -583,8 +594,8 @@ span{
 }
 
 .testimonial-img {
-    width: 80px;
-    height: 80px;
+    width: 73px;
+    height: 92px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 15px;
@@ -597,7 +608,7 @@ span{
 }
 
 .testimonial-text {
-    font-size: 1rem;
+    font-size: 3rem;
     line-height: 1.4;
 }
 
@@ -609,7 +620,7 @@ span{
 
     .testimonial-card {
         width: 80%;
-        height: auto; /* Adjust height for smaller screens */
+        height: auto;
         margin-bottom: 30px;
     }
 }
@@ -823,5 +834,42 @@ span{
     }
     .services-container{
         grid-template-columns: repeat(1,1fr);
+    }
+}
+/* Navigation Toggle for Smaller Screens */
+.nav.active {
+    display: block;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: var(--second-bg-color);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#menu-icon {
+    font-size: 30px;
+    color: white;
+    display: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .nav {
+        display: none;
+    }
+
+    .nav.active {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    .nav a {
+        margin-bottom: 10px;
     }
 }
